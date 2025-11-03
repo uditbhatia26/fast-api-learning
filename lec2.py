@@ -7,6 +7,5 @@ def hello():
     return {"message": "Hello World!!"}
 
 @app.get("/about")
-
 def about():
     return {"message": "Hi My name is Udit"}

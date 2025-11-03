@@ -33,7 +33,7 @@ def get_patient(patient_id: str = Path(...,description="Id of the patient")):
 
 
 @app.get("/sort")
-def sort_patient(sort_by : Literal['weight', 'bmi', 'age', 'height'] = Query(..., description="Sort on the basis of height, weight, or bmi"), order: Literal['asc', 'desc'] = Query(default='asc', description="Choose the order between asc or desc")):
+def sort_patient(sort_by : Literal['weight', 'bmi', 'height'] = Query(..., description="Sort on the basis of height, weight, or bmi"), order: Literal['asc', 'desc'] = Query(default='asc', description="Choose the order between asc or desc")):
 
     valid_fields = ["height", "bmi", "weight"]
 

@@ -78,5 +78,15 @@
         "weight": 70,
         "bmi": 4.85,
         "verdict": "Underweight"
+    },
+    "P0101": {
+        "name": "Udit",
+        "city": "New Delhi",
+        "age": 20,
+        "gender": "Male",
+        "height": 1.8,
+        "weight": 70,
+        "bmi": 21.6,
+        "verdict": "Normal"
     }
 }
