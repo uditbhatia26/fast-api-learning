@@ -1,3 +1,5 @@
+# Added a get request to get the data of a specific file
+
 from fastapi import FastAPI
 import json
 

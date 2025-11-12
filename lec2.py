@@ -1,3 +1,5 @@
+# Creating a simple fastapi app with basic endpoints
+
 from fastapi import FastAPI
 
 app = FastAPI()
