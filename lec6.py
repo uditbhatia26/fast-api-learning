@@ -92,20 +92,11 @@ def save_data(data):
 
 @app.post('/create')
 def create_patient(patient: Patient):
-
-    # Load existing data
     data = load_data("patients.json")
-
-    # Check if patient already exists
     if patient.id in data:
         raise HTTPException(status_code=400, detail="Patient already exists")
-    
-    # Add new patient if not exists
     data[patient.id] = patient.model_dump(exclude=["id"])
-
-    # Save into JSON file
     save_data(data)
-
     return JSONResponse(status_code=201, content={"message": f"Patient with id {patient.id} has been added successfully."})
 
 
@@ -135,3 +126,19 @@ def update_patient(patient_id: str, patient_update: PatientUpdate):
     save_data(data)
 
     return JSONResponse(status_code=200, content={'message': 'Patient successfuly updated'})
+
+
+
+@app.delete("/delete/{patient_id}")
+def delete_patient(patient_id: str):
+    
+    data = load_data("patients.json")
+
+    if patient_id not in data:
+        raise HTTPException(status_code=404, detail="patient not found")
+
+    del data[patient_id]
+
+    save_data(data)
+
+    return JSONResponse(status_code=200, content="Patient removed successfully")
