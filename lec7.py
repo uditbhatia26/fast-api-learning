@@ -1,4 +1,4 @@
-# Servinf ML model with FASTApi
+# Serving ML model with FASTApi
 
 from typing import Literal, Annotated
 from pydantic import BaseModel, computed_field, Field
